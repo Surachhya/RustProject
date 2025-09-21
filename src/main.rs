@@ -1,3 +1,49 @@
+// Define a Circle struct with a radius
+struct Circle {
+    radius: f64, // Radius of the circle as a 64-bit floating-point number
+}
+
+// Implementation block for Circle
+impl Circle {
+    // Constructor function to create a new Circle
+    fn new(radius: f64) -> Circle {
+        Circle { radius }
+    }
+
+    // Function to calculate the area of the circle
+    fn area(&self) -> f64 {
+        let pi = 3.14;
+        pi * self.radius * self.radius
+    }
+
+    // Function to calculate the circumference of the circle
+    fn circumference(&self) -> f64 {
+        let pi = 3.14;
+        2.0 * pi * self.radius
+    }
+}
+
+fn main() {
+    // Create a new circle with radius 5.0
+    let circle = Circle::new(5.0);
+
+    // Print the area of the circle
+    println!("Circle area: {}", circle.area());
+
+    // Print the circumference of the circle
+    println!("Circle circumference: {}", circle.circumference());
+
+    // Test cases to verify the methods work as expected
+    assert!((Circle::new(5.0).area() - 78.5).abs() < 0.01);
+    assert!((Circle::new(5.0).circumference() - 31.4).abs() < 0.01);
+
+}
+
+
+
+
+/* 
+Task 2:
 //struct: allows to package together related values of different data types.
 struct Rectangle { //define a new customm data type (rectangle) using struct
     width: f64, // Width of the rectangle as a 64-bit floating-point number
@@ -33,3 +79,4 @@ fn main() {
     assert!(Rectangle::new(5.0, 5.0).is_square());
     assert!(!Rectangle::new(5.0, 6.0).is_square());
 }
+*/
